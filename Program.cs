@@ -31,7 +31,7 @@ namespace jwt_csharp
          * jwt-csharp.exe (-h | --help)
          * Options:
          *  --key=<str>       path to private key
-         *  --issuer=<str>    issuer id from api connsole
+         *  --issuer_id=<str>    issuer id from api connsole
          *  --username=<str>  username if generating user token
          *  --expire=<int>  exprire time by seconds default = 1800"
          *  -h --help         Show this screen.
@@ -49,14 +49,15 @@ namespace jwt_csharp
                 {
 
                     long currentTime = DateTimeOffset.Now.ToUnixTimeSeconds();
-                    int expire = _paramOptions.ExpireTime;
+                    //int expire = _paramOptions.ExpireTime;
 
 
                     var payload = new Dictionary<string, object>();
                     payload["iss"] = _paramOptions.Issuer;
                     payload["iat"] = currentTime;
 
-                    payload["exp"] = currentTime + expire; // default 1800s
+                    //payload["exp"] = currentTime + expire; // default 1800s
+                    payload["exp"] = currentTime + 1800; // default 1800s
 
                     if (_paramOptions.Username != string.Empty)
                     {

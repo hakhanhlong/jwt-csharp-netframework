@@ -8,9 +8,8 @@
 * jwt-csharp.exe (-h | --help)
 * Options:
 *  --key=<str>       path to private key
-*  --issuer=<str>    issuer id from api connsole
+*  --issuer_id=<str>    issuer id from api connsole
 *  --username=<str>  username if generating user token
-*  --expire=<int>  exprire time by seconds default = 1800
 *  -h --help         Show this screen.
 *
 */
